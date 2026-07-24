@@ -221,6 +221,21 @@ section {
     margin-bottom: 24px;
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.2s forwards;
+    min-height: 1.5em;
+}
+
+.typing-text {
+    color: var(--accent);
+}
+
+.cursor {
+    color: var(--accent);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 .hero-description {
@@ -453,8 +468,13 @@ section {
 
 .skill-icon {
     display: block;
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
 }
 
 .skill-name {
@@ -724,7 +744,7 @@ section {
 }
 
 .timeline-list li::before {
-    content: '•';
+    content: 'ï¿½';
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -837,6 +857,9 @@ section {
 .info-icon {
     font-size: 1.5rem;
     line-height: 1;
+    color: var(--accent);
+    width: 24px;
+    text-align: center;
 }
 
 .info-content h4 {
