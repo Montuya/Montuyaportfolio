@@ -22,10 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', newTheme);
     });
 
-    // Particle Animation
+    // Particle Animation (Optimized)
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
+    let animationId;
+    let lastTime = 0;
+    const fps = 30;
+    const interval = 1000 / fps;
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -39,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2 + 1;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
-            this.opacity = Math.random() * 0.5 + 0.2;
+            this.size = Math.random() * 1.5 + 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.speedY = (Math.random() - 0.5) * 0.3;
+            this.opacity = Math.random() * 0.4 + 0.1;
         }
 
         update() {
@@ -68,7 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initParticles() {
         particles = [];
-        const numParticles = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+        const isMobile = window.innerWidth < 768;
+        const numParticles = isMobile 
+            ? Math.min(25, Math.floor((canvas.width * canvas.height) / 40000))
+            : Math.min(40, Math.floor((canvas.width * canvas.height) / 25000));
         for (let i = 0; i < numParticles; i++) {
             particles.push(new Particle());
         }
@@ -76,16 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function connectParticles() {
         const isDark = html.getAttribute('data-theme') === 'dark';
+        const maxDistance = 120;
+        
         for (let a = 0; a < particles.length; a++) {
             for (let b = a + 1; b < particles.length; b++) {
                 const dx = particles[a].x - particles[b].x;
                 const dy = particles[a].y - particles[b].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+                const distance = dx * dx + dy * dy;
 
-                if (distance < 150) {
+                if (distance < maxDistance * maxDistance) {
+                    const opacity = 0.08 * (1 - Math.sqrt(distance) / maxDistance);
                     ctx.strokeStyle = isDark
-                        ? `rgba(59, 130, 246, ${0.1 * (1 - distance / 150)})`
-                        : `rgba(37, 99, 235, ${0.1 * (1 - distance / 150)})`;
+                        ? `rgba(59, 130, 246, ${opacity})`
+                        : `rgba(37, 99, 235, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
                     ctx.moveTo(particles[a].x, particles[a].y);
@@ -96,18 +106,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function animateParticles() {
+    function animateParticles(currentTime) {
+        animationId = requestAnimationFrame(animateParticles);
+        
+        const deltaTime = currentTime - lastTime;
+        if (deltaTime < interval) return;
+        lastTime = currentTime - (deltaTime % interval);
+        
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(particle => {
             particle.update();
             particle.draw();
         });
         connectParticles();
-        requestAnimationFrame(animateParticles);
     }
 
     initParticles();
-    animateParticles();
+    animateParticles(0);
 
     // Typing Animation
     const typingText = document.querySelector('.typing-text');
@@ -414,51 +429,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 3D Tilt Effect on Cards
+    // 3D Tilt Effect on Cards (Optimized with throttle)
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
     function add3DTiltEffect(selector) {
         document.querySelectorAll(selector).forEach(card => {
-            card.addEventListener('mousemove', function(e) {
+            card.addEventListener('mousemove', throttle(function(e) {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
                 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
-            });
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            }, 16));
 
             card.addEventListener('mouseleave', function() {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+                card.style.transform = '';
             });
         });
     }
 
-    add3DTiltEffect('.stat-card-3d');
-    add3DTiltEffect('.skill-card-3d');
-    add3DTiltEffect('.project-card-3d');
-    add3DTiltEffect('.social-icon-3d');
+    const isMobile = window.innerWidth > 768;
+    if (isMobile) {
+        add3DTiltEffect('.stat-card-3d');
+        add3DTiltEffect('.skill-card-3d');
+        add3DTiltEffect('.project-card-3d');
+        add3DTiltEffect('.social-icon-3d');
+    }
 
-    // 3D Profile Image Parallax
+    // 3D Profile Image Parallax (Optimized)
     const profileImage = document.querySelector('.profile-image-3d');
-    if (profileImage) {
+    if (profileImage && isMobile) {
         const profileWrapper = profileImage.closest('.profile-wrapper-3d');
         
-        profileWrapper.addEventListener('mousemove', function(e) {
+        profileWrapper.addEventListener('mousemove', throttle(function(e) {
             const rect = profileWrapper.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 15;
-            const rotateY = (centerX - x) / 15;
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
             
-            profileImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px)`;
-        });
+            profileImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(15px)`;
+        }, 16));
 
         profileWrapper.addEventListener('mouseleave', function() {
-            profileImage.style.transform = 'rotateX(5deg) rotateY(-5deg) translateZ(0px)';
+            profileImage.style.transform = '';
         });
     }
 
