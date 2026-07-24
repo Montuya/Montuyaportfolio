@@ -179,3 +179,23 @@ document.addEventListener('DOMContentLoaded', function() {
         el.classList.add('animate-on-scroll', 'fade-in');
         observer.observe(el);
     });
+
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
