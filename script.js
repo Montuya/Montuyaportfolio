@@ -132,3 +132,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Apply animation classes to elements
+    document.querySelectorAll('.section-title').forEach(el => {
+        el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.stat-card').forEach(el => {
+        el.classList.add('animate-on-scroll', 'fade-in');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.skill-card').forEach(el => {
+        el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.project-card').forEach(el => {
+        el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.timeline-item').forEach(el => {
+        el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.contact-form, .contact-info').forEach(el => {
+        el.classList.add('animate-on-scroll', 'fade-in');
+        observer.observe(el);
+    });
