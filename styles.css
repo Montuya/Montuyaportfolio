@@ -1307,6 +1307,10 @@ section {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1333,6 +1337,8 @@ section {
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -1359,17 +1365,27 @@ section {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 
+    .hero {
+        padding-top: 100px;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
 
     .hero-tagline {
-        font-size: 1.125rem;
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 10px;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .btn {
@@ -1378,11 +1394,54 @@ section {
         justify-content: center;
     }
 
+    .hero-social {
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
     .section-title {
         font-size: 1.5rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+        margin-bottom: 40px;
+    }
+
+    .title-number {
+        font-size: 0.875rem;
+    }
+
+    .about-highlight {
+        font-size: 1.125rem;
+    }
+
+    .about-text p {
+        font-size: 0.9375rem;
+    }
+
+    .tech-list {
+        gap: 12px;
+    }
+
+    .tech-list span {
+        font-size: 0.8125rem;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-decoration {
+        width: 250px;
+        height: 250px;
+        top: 15px;
+        left: 15px;
     }
 
     .stats {
@@ -1390,8 +1449,73 @@ section {
         gap: 20px;
     }
 
+    .stat-card {
+        padding: 30px 20px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skill-category {
+        padding: 20px;
+    }
+
+    .skill-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 15px 10px;
+    }
+
+    .skill-icon {
+        font-size: 2rem;
+    }
+
+    .skill-name {
+        font-size: 0.8125rem;
+    }
+
+    .project-filters {
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.8125rem;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.125rem;
+    }
+
+    .project-description {
+        font-size: 0.875rem;
     }
 
     .timeline::before {
@@ -1413,14 +1537,75 @@ section {
     .timeline-icon {
         left: -5px !important;
         right: auto !important;
+        width: 40px;
+        height: 40px;
+        font-size: 0.875rem;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .timeline-title {
+        font-size: 1.125rem;
+    }
+
+    .timeline-company {
+        font-size: 0.9375rem;
+    }
+
+    .timeline-list li {
+        font-size: 0.875rem;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-form {
+        padding: 25px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 14px 16px;
+        font-size: 0.9375rem;
+    }
+
+    .contact-info {
+        gap: 15px;
+    }
+
+    .info-card {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .info-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .info-icon {
+        font-size: 1.125rem;
+    }
+
+    .info-content h4 {
+        font-size: 0.9375rem;
+    }
+
+    .info-content p {
+        font-size: 0.875rem;
     }
 
     .theme-toggle {
@@ -1431,8 +1616,34 @@ section {
         height: 45px;
     }
 
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-logo .logo-gradient {
+        font-size: 1.5rem;
+    }
+
     .footer-links {
         flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-social {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.8125rem;
     }
 
     .scroll-indicator {
@@ -1442,33 +1653,99 @@ section {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero-badge {
-        font-size: 0.75rem;
-        padding: 6px 16px;
+        font-size: 0.6875rem;
+        padding: 6px 14px;
+    }
+
+    .hero-tagline {
+        font-size: 0.9375rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 0.875rem;
     }
 
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 
     .profile-decoration {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8125rem;
     }
 
     .skill-cards {
         grid-template-columns: 1fr;
     }
 
+    .project-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .timeline-date {
+        font-size: 0.8125rem;
+    }
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-company {
+        font-size: 0.875rem;
+    }
+
+    .timeline-list li {
+        font-size: 0.8125rem;
+        padding-left: 20px;
+    }
+
     .contact-form {
-        padding: 25px;
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.8125rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.875rem;
+    }
+
+    .btn-submit {
+        padding: 16px;
     }
 
     .info-card {
-        padding: 20px;
+        padding: 16px;
     }
 }
