@@ -413,4 +413,58 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // 3D Tilt Effect on Cards
+    function add3DTiltEffect(selector) {
+        document.querySelectorAll(selector).forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            });
+        });
+    }
+
+    add3DTiltEffect('.stat-card-3d');
+    add3DTiltEffect('.skill-card-3d');
+    add3DTiltEffect('.project-card-3d');
+    add3DTiltEffect('.social-icon-3d');
+
+    // 3D Profile Image Parallax
+    const profileImage = document.querySelector('.profile-image-3d');
+    if (profileImage) {
+        const profileWrapper = profileImage.closest('.profile-wrapper-3d');
+        
+        profileWrapper.addEventListener('mousemove', function(e) {
+            const rect = profileWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
+            
+            profileImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px)`;
+        });
+
+        profileWrapper.addEventListener('mouseleave', function() {
+            profileImage.style.transform = 'rotateX(5deg) rotateY(-5deg) translateZ(0px)';
+        });
+    }
+
+    // 3D Floating Animation for Hero Badge
+    const heroBadge = document.querySelector('.hero-badge');
+    if (heroBadge) {
+        heroBadge.classList.add('float-3d');
+    }
 });
