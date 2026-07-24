@@ -8,14 +8,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">Portfolio</a>
+            <a href="#hero" class="nav-logo">
+                <span class="logo-gradient">&lt;Dev /&gt;</span>
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
@@ -29,141 +48,221 @@
             </ul>
         </div>
     </nav>
+
     <section id="hero" class="hero">
-            <div class="hero-container">
-                <h1 class="hero-title">Your Name</h1>
-                <p class="hero-tagline"><span class="typing-text"></span><span class="cursor">|</span></p>
-                <p class="hero-description">Building beautiful, performant mobile applications and scalable web solutions. Passionate about creating seamless user experiences.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for hire
             </div>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Your Name</span>
+            </h1>
+            <p class="hero-tagline">
+                <span class="typing-text"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-description">Building beautiful, performant mobile applications and scalable web solutions. Passionate about creating seamless user experiences.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
+            </div>
+            <div class="hero-social">
+                <a href="https://github.com" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
     </section>
+
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">
+                <span class="title-number">01.</span> About Me
+            </h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate developer with expertise in building mobile applications using Flutter and full-stack web solutions. With a focus on clean code and user-centric design, I create applications that are both beautiful and performant.</p>
-                    <p>My journey in tech has been driven by curiosity and a desire to solve real-world problems through technology. I enjoy working across the entire development stack, from crafting pixel-perfect UIs to designing robust backend systems.</p>
+                    <p class="about-highlight">I'm a passionate developer with expertise in building mobile applications using Flutter and full-stack web solutions.</p>
+                    <p>With a focus on clean code and user-centric design, I create applications that are both beautiful and performant. My journey in tech has been driven by curiosity and a desire to solve real-world problems through technology.</p>
+                    <p>I enjoy working across the entire development stack, from crafting pixel-perfect UIs to designing robust backend systems. Here are a few technologies I've been working with recently:</p>
+                    <div class="tech-list">
+                        <span><i class="devicon-flutter-plain colored"></i> Flutter</span>
+                        <span><i class="devicon-dart-plain colored"></i> Dart</span>
+                        <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                        <span><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                        <span><i class="devicon-firebase-plain colored"></i> Firebase</span>
+                        <span><i class="devicon-python-plain colored"></i> Python</span>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <div class="profile-placeholder">
-                        <span>Your Photo</span>
+                    <div class="profile-wrapper">
+                        <div class="profile-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Profile Photo">
+                        </div>
+                        <div class="profile-decoration"></div>
+                        <div class="profile-dots"></div>
                     </div>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-card">
-                    <span class="stat-number">5+</span>
+                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-plus">+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">20+</span>
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <span class="stat-number" data-count="20">0</span>
+                    <span class="stat-plus">+</span>
                     <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">15+</span>
+                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-plus">+</span>
                     <span class="stat-label">Technologies</span>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
+            <h2 class="section-title">
+                <span class="title-number">02.</span> Skills & Tech Stack
+            </h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">Mobile</h3>
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i class="fas fa-mobile-alt category-icon"></i>
+                        <h3 class="category-title">Mobile</h3>
+                    </div>
                     <div class="skill-cards">
                         <div class="skill-card">
                             <i class="devicon-flutter-plain colored skill-icon"></i>
                             <span class="skill-name">Flutter</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-dart-plain colored skill-icon"></i>
                             <span class="skill-name">Dart</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-apple-original colored skill-icon"></i>
                             <span class="skill-name">iOS</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-android-plain colored skill-icon"></i>
                             <span class="skill-name">Android</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                         </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Frontend</h3>
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i class="fas fa-code category-icon"></i>
+                        <h3 class="category-title">Frontend</h3>
+                    </div>
                     <div class="skill-cards">
                         <div class="skill-card">
                             <i class="devicon-html5-plain colored skill-icon"></i>
                             <span class="skill-name">HTML5</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-css3-plain colored skill-icon"></i>
                             <span class="skill-name">CSS3</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-javascript-plain colored skill-icon"></i>
                             <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-react-original colored skill-icon"></i>
                             <span class="skill-name">React</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
                         </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Backend</h3>
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i class="fas fa-server category-icon"></i>
+                        <h3 class="category-title">Backend</h3>
+                    </div>
                     <div class="skill-cards">
                         <div class="skill-card">
                             <i class="devicon-nodejs-plain colored skill-icon"></i>
                             <span class="skill-name">Node.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-python-plain colored skill-icon"></i>
                             <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-php-plain colored skill-icon"></i>
                             <span class="skill-name">PHP</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-mysql-plain colored skill-icon"></i>
                             <span class="skill-name">MySQL</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
                         </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Tools</h3>
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i class="fas fa-tools category-icon"></i>
+                        <h3 class="category-title">Tools</h3>
+                    </div>
                     <div class="skill-cards">
                         <div class="skill-card">
                             <i class="devicon-git-plain colored skill-icon"></i>
                             <span class="skill-name">Git</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-firebase-plain colored skill-icon"></i>
                             <span class="skill-name">Firebase</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-amazonwebservices-plain-wordmark colored skill-icon"></i>
                             <span class="skill-name">AWS</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
                         </div>
                         <div class="skill-card">
                             <i class="devicon-docker-plain colored skill-icon"></i>
                             <span class="skill-name">Docker</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">
+                <span class="title-number">03.</span> My Projects
+            </h2>
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="mobile">Mobile</button>
@@ -171,9 +270,15 @@
                 <button class="filter-btn" data-filter="backend">Backend</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="mobile">
+                <div class="project-card glass-card" data-category="mobile">
                     <div class="project-image">
-                        <span class="project-placeholder">Project Screenshot</span>
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="E-Commerce App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce App</h3>
@@ -183,15 +288,17 @@
                             <span class="tag">Dart</span>
                             <span class="tag">Firebase</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="web">
+                <div class="project-card glass-card" data-category="web">
                     <div class="project-image">
-                        <span class="project-placeholder">Project Screenshot</span>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Portfolio Website</h3>
@@ -201,15 +308,17 @@
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="backend">
+                <div class="project-card glass-card" data-category="backend">
                     <div class="project-image">
-                        <span class="project-placeholder">Project Screenshot</span>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="REST API Service">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">REST API Service</h3>
@@ -219,15 +328,17 @@
                             <span class="tag">Express</span>
                             <span class="tag">MongoDB</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="mobile">
+                <div class="project-card glass-card" data-category="mobile">
                     <div class="project-image">
-                        <span class="project-placeholder">Project Screenshot</span>
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop" alt="Task Manager App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Task Manager App</h3>
@@ -237,21 +348,21 @@
                             <span class="tag">Dart</span>
                             <span class="tag">SQLite</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">
+                <span class="title-number">04.</span> Experience
+            </h2>
             <div class="timeline">
                 <div class="timeline-item left">
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                         <span class="timeline-date">2022 - Present</span>
                         <h3 class="timeline-title">Senior Mobile Developer</h3>
                         <h4 class="timeline-company">Tech Company Inc.</h4>
@@ -263,7 +374,8 @@
                     </div>
                 </div>
                 <div class="timeline-item right">
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-code"></i></div>
                         <span class="timeline-date">2020 - 2022</span>
                         <h3 class="timeline-title">Full-Stack Developer</h3>
                         <h4 class="timeline-company">Digital Agency</h4>
@@ -275,7 +387,8 @@
                     </div>
                 </div>
                 <div class="timeline-item left">
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
                         <span class="timeline-date">2019 - 2020</span>
                         <h3 class="timeline-title">Junior Developer</h3>
                         <h4 class="timeline-company">Startup XYZ</h4>
@@ -289,20 +402,30 @@
             </div>
         </div>
     </section>
+
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
+            <h2 class="section-title">
+                <span class="title-number">05.</span> Contact Me
+            </h2>
             <div class="contact-content">
-                <div class="contact-form">
+                <div class="contact-form glass-card">
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message"></span>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message"></span>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
                             <span class="error-message"></span>
                         </div>
                         <div class="form-group">
@@ -310,33 +433,44 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                             <span class="error-message"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
                 <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope info-icon"></i>
+                    <div class="info-card glass-card">
+                        <div class="info-icon-wrapper">
+                            <i class="fas fa-envelope info-icon"></i>
+                        </div>
                         <div class="info-content">
                             <h4>Email</h4>
                             <p>your.email@example.com</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fab fa-linkedin info-icon"></i>
+                    <div class="info-card glass-card">
+                        <div class="info-icon-wrapper">
+                            <i class="fab fa-linkedin info-icon"></i>
+                        </div>
                         <div class="info-content">
                             <h4>LinkedIn</h4>
                             <p>linkedin.com/in/yourprofile</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fab fa-github info-icon"></i>
+                    <div class="info-card glass-card">
+                        <div class="info-icon-wrapper">
+                            <i class="fab fa-github info-icon"></i>
+                        </div>
                         <div class="info-content">
                             <h4>GitHub</h4>
                             <p>github.com/yourusername</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt info-icon"></i>
+                    <div class="info-card glass-card">
+                        <div class="info-icon-wrapper">
+                            <i class="fas fa-map-marker-alt info-icon"></i>
+                        </div>
                         <div class="info-content">
                             <h4>Location</h4>
                             <p>Manila, Philippines</p>
@@ -346,27 +480,28 @@
             </div>
         </div>
     </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-gradient">&lt;Dev /&gt;</span>
+                </div>
                 <div class="footer-links">
-                    <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://github.com" class="social-link" target="_blank" rel="noopener">GitHub</a>
-                    <a href="mailto:your.email@example.com" class="social-link">Email</a>
+                    <a href="https://github.com" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:your.email@example.com" class="footer-social"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p class="copyright">&copy; 2026 Your Name. All rights reserved.</p>
             </div>
-            <a href="#hero" class="back-to-top" aria-label="Back to top">?</a>
         </div>
     </footer>
+
+    <a href="#hero" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
