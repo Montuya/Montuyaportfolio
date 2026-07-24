@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - Flutter Mobile Developer & Full-Stack Developer">
-    <title>Portfolio | Flutter & Full-Stack Developer</title>
+    <meta name="description" content="Chande Montuya - Flutter Mobile Developer & Full-Stack Developer Portfolio">
+    <title>Chande Montuya | Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,22 +13,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Grain Overlay -->
     <div class="grain-overlay"></div>
-
-    <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-spinner"></div>
     </div>
-
-    <!-- Particles -->
     <canvas id="particles"></canvas>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
-                <span class="logo-gradient">&lt;Dev /&gt;</span>
+                <span class="logo-bracket">&lt;</span><span class="logo-text">CM</span><span class="logo-bracket"> /&gt;</span>
             </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
@@ -44,43 +38,58 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section id="hero" class="hero">
         <div class="hero-container">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Available for hire
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for hire
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm<br>
+                    <span class="hero-name">Chande Montuya</span>
+                </h1>
+                <p class="hero-tagline">
+                    <span class="typing-text"></span><span class="cursor">|</span>
+                </p>
+                <p class="hero-description">
+                    Building beautiful, performant mobile applications and scalable web solutions.
+                    Passionate about creating seamless user experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Contact Me</span>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/Montuya" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/chande-montuya" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <h1 class="hero-title">
-                Hi, I'm <span class="gradient-text">Chande Montuya</span>
-            </h1>
-            <p class="hero-tagline">
-                <span class="typing-text"></span><span class="cursor">|</span>
-            </p>
-            <p class="hero-description">Building beautiful, performant mobile applications and scalable web solutions. Passionate about creating seamless user experiences.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> View My Work
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-paper-plane"></i> Contact Me
-                </a>
-            </div>
-            <div class="hero-social">
-                <a href="https://github.com/Montuya" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/chande-montuya" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+            <div class="hero-visual">
+                <div class="profile-wrapper">
+                    <div class="profile-glow"></div>
+                    <div class="profile-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face" alt="Chande Montuya" width="500" height="600">
+                    </div>
+                    <div class="profile-ring"></div>
+                    <div class="profile-dots"></div>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
-            <p>Scroll</p>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">
@@ -100,31 +109,19 @@
                         <span><i class="devicon-python-plain colored"></i> Python</span>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="profile-wrapper">
-                        <div class="profile-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Profile Photo">
-                        </div>
-                        <div class="profile-decoration"></div>
-                        <div class="profile-dots"></div>
-                    </div>
-                </div>
             </div>
             <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
                     <span class="stat-number" data-count="5">0</span>
                     <span class="stat-plus">+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-code"></i></div>
                     <span class="stat-number" data-count="20">0</span>
                     <span class="stat-plus">+</span>
                     <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
                     <span class="stat-number" data-count="15">0</span>
                     <span class="stat-plus">+</span>
                     <span class="stat-label">Technologies</span>
@@ -133,7 +130,6 @@
         </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">
@@ -142,8 +138,10 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="category-header">
-                        <i class="fas fa-mobile-alt category-icon"></i>
-                        <h3 class="category-title">Mobile</h3>
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-mobile-alt category-icon"></i>
+                        </div>
+                        <h3 class="category-title">Mobile Development</h3>
                     </div>
                     <div class="skill-cards">
                         <div class="skill-card">
@@ -170,7 +168,9 @@
                 </div>
                 <div class="skill-category">
                     <div class="category-header">
-                        <i class="fas fa-code category-icon"></i>
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-code category-icon"></i>
+                        </div>
                         <h3 class="category-title">Frontend</h3>
                     </div>
                     <div class="skill-cards">
@@ -198,7 +198,9 @@
                 </div>
                 <div class="skill-category">
                     <div class="category-header">
-                        <i class="fas fa-server category-icon"></i>
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-server category-icon"></i>
+                        </div>
                         <h3 class="category-title">Backend</h3>
                     </div>
                     <div class="skill-cards">
@@ -226,8 +228,10 @@
                 </div>
                 <div class="skill-category">
                     <div class="category-header">
-                        <i class="fas fa-tools category-icon"></i>
-                        <h3 class="category-title">Tools</h3>
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-tools category-icon"></i>
+                        </div>
+                        <h3 class="category-title">Tools & DevOps</h3>
                     </div>
                     <div class="skill-cards">
                         <div class="skill-card">
@@ -256,7 +260,6 @@
         </div>
     </section>
 
-    <!-- Projects -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">
@@ -269,17 +272,21 @@
                 <button class="filter-btn" data-filter="backend">Backend</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="mobile">
+                <div class="project-card project-featured" data-category="mobile">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="E-Commerce App">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop" alt="E-Commerce App" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category-badge">Featured</span>
+                            <span class="project-category-badge">Mobile</span>
+                        </div>
                         <h3 class="project-title">E-Commerce App</h3>
                         <p class="project-description">A full-featured mobile shopping application with real-time inventory, payment integration, and order tracking.</p>
                         <div class="project-tags">
@@ -291,15 +298,18 @@
                 </div>
                 <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Portfolio Website">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Portfolio Website" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category-badge">Web</span>
+                        </div>
                         <h3 class="project-title">Portfolio Website</h3>
                         <p class="project-description">A minimalist portfolio website built with vanilla HTML, CSS, and JavaScript. Features responsive design and smooth animations.</p>
                         <div class="project-tags">
@@ -311,15 +321,18 @@
                 </div>
                 <div class="project-card" data-category="backend">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="REST API Service">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop" alt="REST API Service" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category-badge">Backend</span>
+                        </div>
                         <h3 class="project-title">REST API Service</h3>
                         <p class="project-description">A scalable REST API with authentication, rate limiting, and comprehensive documentation.</p>
                         <div class="project-tags">
@@ -331,15 +344,18 @@
                 </div>
                 <div class="project-card" data-category="mobile">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop" alt="Task Manager App">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=500&fit=crop" alt="Task Manager App" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category-badge">Mobile</span>
+                        </div>
                         <h3 class="project-title">Task Manager App</h3>
                         <p class="project-description">A cross-platform task management app with drag-and-drop, reminders, and team collaboration features.</p>
                         <div class="project-tags">
@@ -353,7 +369,6 @@
         </div>
     </section>
 
-    <!-- Experience -->
     <section id="experience" class="experience">
         <div class="container">
             <h2 class="section-title">
@@ -361,9 +376,11 @@
             </h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2022 - Present</span>
+                        <span class="timeline-date">2022 &mdash; Present</span>
                         <h3 class="timeline-title">Senior Mobile Developer</h3>
                         <h4 class="timeline-company">Tech Company Inc.</h4>
                         <ul class="timeline-list">
@@ -374,9 +391,11 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2022</span>
+                        <span class="timeline-date">2020 &mdash; 2022</span>
                         <h3 class="timeline-title">Full-Stack Developer</h3>
                         <h4 class="timeline-company">Digital Agency</h4>
                         <ul class="timeline-list">
@@ -387,9 +406,11 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2019 - 2020</span>
+                        <span class="timeline-date">2019 &mdash; 2020</span>
                         <h3 class="timeline-title">Junior Developer</h3>
                         <h4 class="timeline-company">Startup XYZ</h4>
                         <ul class="timeline-list">
@@ -403,45 +424,47 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">05.</span> Get In Touch
-            </h2>
+            <div class="contact-header">
+                <h2 class="section-title contact-title">
+                    <span class="title-number">05.</span> Get In Touch
+                </h2>
+                <p class="contact-subtitle">I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            </div>
             <div class="contact-content">
-                <div class="contact-form">
+                <div class="contact-form-wrap">
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
                                 <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
                                 <span class="error-message"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
                             <span class="error-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
                             <span class="error-message"></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-submit">
-                            <span class="btn-text">Send Message</span>
+                            <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>
                 <div class="contact-info">
-                    <div class="info-card">
+                    <a href="mailto:chande.montuya@gmail.com" class="info-card">
                         <div class="info-icon-wrapper">
                             <i class="fas fa-envelope info-icon"></i>
                         </div>
@@ -449,8 +472,9 @@
                             <h4>Email</h4>
                             <p>chande.montuya@gmail.com</p>
                         </div>
-                    </div>
-                    <div class="info-card">
+                        <i class="fas fa-arrow-right info-arrow"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/chande-montuya" class="info-card" target="_blank" rel="noopener">
                         <div class="info-icon-wrapper">
                             <i class="fab fa-linkedin info-icon"></i>
                         </div>
@@ -458,8 +482,9 @@
                             <h4>LinkedIn</h4>
                             <p>linkedin.com/in/chande-montuya</p>
                         </div>
-                    </div>
-                    <div class="info-card">
+                        <i class="fas fa-arrow-right info-arrow"></i>
+                    </a>
+                    <a href="https://github.com/Montuya" class="info-card" target="_blank" rel="noopener">
                         <div class="info-icon-wrapper">
                             <i class="fab fa-github info-icon"></i>
                         </div>
@@ -467,7 +492,8 @@
                             <h4>GitHub</h4>
                             <p>github.com/Montuya</p>
                         </div>
-                    </div>
+                        <i class="fas fa-arrow-right info-arrow"></i>
+                    </a>
                     <div class="info-card">
                         <div class="info-icon-wrapper">
                             <i class="fas fa-map-marker-alt info-icon"></i>
@@ -482,25 +508,23 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-gradient">&lt;Dev /&gt;</span>
-                </div>
+                <a href="#hero" class="footer-logo">
+                    <span class="logo-bracket">&lt;</span><span class="logo-text">CM</span><span class="logo-bracket"> /&gt;</span>
+                </a>
                 <div class="footer-links">
-                    <a href="https://github.com/Montuya" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/chande-montuya" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:chande.montuya@gmail.com" class="footer-social"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Montuya" class="footer-social" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/chande-montuya" class="footer-social" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" class="footer-social" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:chande.montuya@gmail.com" class="footer-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p class="copyright">&copy; 2026 Chande Montuya. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
     <a href="#hero" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>

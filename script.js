@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.size = Math.random() * 1.2 + 0.4;
             this.speedX = (Math.random() - 0.5) * 0.25;
             this.speedY = (Math.random() - 0.5) * 0.25;
-            this.opacity = Math.random() * 0.3 + 0.1;
+            this.opacity = Math.random() * 0.2 + 0.05;
         }
 
         update() {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initParticles() {
         particles = [];
         const isMobile = window.innerWidth < 768;
-        const count = isMobile ? 20 : 35;
+        const count = isMobile ? 15 : 30;
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());
         }
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const dist = dx * dx + dy * dy;
                 const maxDist = 12000;
                 if (dist < maxDist) {
-                    const opacity = 0.06 * (1 - dist / maxDist);
+                    const opacity = 0.04 * (1 - dist / maxDist);
                     ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
@@ -261,8 +261,18 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    document.querySelectorAll('.about-text, .about-image').forEach(el => {
+    document.querySelectorAll('.about-text').forEach(el => {
         el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.hero-content').forEach(el => {
+        el.classList.add('animate-on-scroll', 'slide-up');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.hero-visual').forEach(el => {
+        el.classList.add('animate-on-scroll', 'fade-in');
         observer.observe(el);
     });
 
