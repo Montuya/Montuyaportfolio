@@ -466,9 +466,11 @@ section {
 
 .profile-wrapper {
     position: relative;
-    width: clamp(100px, 28vw, 380px);
-    aspect-ratio: 4 / 5;
+    width: clamp(200px, 32vw, 440px);
+    aspect-ratio: 3 / 4;
     animation: floatProfile 6s ease-in-out infinite;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
 }
 
 /* Code Editor Window */
@@ -476,9 +478,9 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-58%, -46%) rotate(-3deg);
+    transform: translate(-50%, -50%) rotate(-3deg);
     z-index: 1;
-    width: 280px;
+    width: 110%;
     background: rgba(13, 17, 23, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 10px;
@@ -492,8 +494,8 @@ section {
 }
 
 @keyframes codeFloat {
-    0% { transform: translate(-58%, -46%) rotate(-3deg) translateY(0); }
-    100% { transform: translate(-58%, -46%) rotate(-3deg) translateY(-6px); }
+    0% { transform: translate(-50%, -50%) rotate(-3deg) translateY(0); }
+    100% { transform: translate(-50%, -50%) rotate(-3deg) translateY(-6px); }
 }
 
 .code-titlebar {
@@ -1593,10 +1595,6 @@ section {
         gap: 80px;
     }
 
-    .profile-wrapper {
-        width: clamp(100px, 32vw, 420px);
-    }
-
     .profile-accent-line {
         width: 50px;
         left: -30px;
@@ -1619,10 +1617,6 @@ section {
 
     .hero-container {
         gap: 48px;
-    }
-
-    .profile-wrapper {
-        width: clamp(100px, 30vw, 320px);
     }
 
     .profile-accent-line {
@@ -1732,17 +1726,12 @@ section {
     }
 
     .profile-wrapper {
-        width: 160px;
-        height: 160px;
+        width: clamp(160px, 45vw, 220px);
         animation: none;
     }
 
-    .profile-image {
-        border-radius: 50%;
-    }
-
-    .profile-ring {
-        border-radius: 50%;
+    .code-window {
+        width: 120%;
     }
 
     .profile-glow,
@@ -1928,13 +1917,11 @@ section {
     }
 
     .profile-wrapper {
-        width: 140px;
-        height: 140px;
+        width: clamp(150px, 42vw, 200px);
     }
 
     .code-window {
-        width: 200px;
-        transform: translate(-54%, -42%) rotate(-2deg);
+        width: 130%;
     }
 
     .code-body {
