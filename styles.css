@@ -466,8 +466,8 @@ section {
 
 .profile-wrapper {
     position: relative;
-    width: 380px;
-    height: 460px;
+    width: clamp(100px, 28vw, 380px);
+    aspect-ratio: 4 / 5;
     animation: floatProfile 6s ease-in-out infinite;
 }
 
@@ -1594,8 +1594,7 @@ section {
     }
 
     .profile-wrapper {
-        width: 420px;
-        height: 500px;
+        width: clamp(100px, 32vw, 420px);
     }
 
     .profile-accent-line {
@@ -1623,8 +1622,7 @@ section {
     }
 
     .profile-wrapper {
-        width: 320px;
-        height: 400px;
+        width: clamp(100px, 30vw, 320px);
     }
 
     .profile-accent-line {
@@ -1734,20 +1732,17 @@ section {
     }
 
     .profile-wrapper {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
         animation: none;
     }
 
     .profile-image {
         border-radius: 50%;
-        width: 100%;
-        height: 100%;
     }
 
     .profile-ring {
         border-radius: 50%;
-        inset: -6px;
     }
 
     .profile-glow,
@@ -1933,8 +1928,8 @@ section {
     }
 
     .profile-wrapper {
-        width: 88px;
-        height: 88px;
+        width: 110px;
+        height: 110px;
     }
 
     .code-window {
